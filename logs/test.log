@@ -1,0 +1,17 @@
+2026-06-17 12:37:57 INFO  tests.BaseTest - Extent Report initialized
+2026-06-17 12:38:03 INFO  tests.BaseTest - Browser opened and navigated to: https://www.saucedemo.com
+2026-06-17 12:38:03 INFO  tests.BaseTest - Starting intentional fail test
+2026-06-17 12:38:03 ERROR tests.BaseTest - Test FAILED: intentionalFailTest
+2026-06-17 12:38:03 INFO  tests.BaseTest - Screenshot saved: C:\Users\cbijo\IdeaProjects\sample/screenshots/intentionalFailTest_20260617_123803.png
+2026-06-17 12:38:04 INFO  tests.BaseTest - Browser closed
+2026-06-17 12:38:07 INFO  tests.BaseTest - Browser opened and navigated to: https://www.saucedemo.com
+2026-06-17 12:38:07 INFO  tests.BaseTest - Starting invalid login test
+2026-06-17 12:38:09 INFO  tests.BaseTest - Invalid login test completed successfully
+2026-06-17 12:38:09 INFO  tests.BaseTest - Test PASSED: invalidLoginTest
+2026-06-17 12:38:09 INFO  tests.BaseTest - Browser closed
+2026-06-17 12:38:12 INFO  tests.BaseTest - Browser opened and navigated to: https://www.saucedemo.com
+2026-06-17 12:38:12 INFO  tests.BaseTest - Starting valid login test
+2026-06-17 12:38:12 INFO  tests.BaseTest - Valid login test completed successfully
+2026-06-17 12:38:12 INFO  tests.BaseTest - Test PASSED: validLoginTest
+2026-06-17 12:38:12 INFO  tests.BaseTest - Browser closed
+2026-06-17 12:38:13 INFO  tests.BaseTest - Extent Report saved
