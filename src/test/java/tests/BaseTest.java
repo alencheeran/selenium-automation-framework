@@ -11,6 +11,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -56,7 +57,25 @@ public class BaseTest {
     // Runs before EVERY test method
     @BeforeMethod
     public void setup() {
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+
+        // Check if headless mode is requested (CI/CD environments)
+        boolean isHeadless = Boolean.parseBoolean(System.getProperty("headless", "false"));
+        if (isHeadless) {
+            options.addArguments("--headless");
+        }
+
+        // Required for GitHub Actions and other Linux environments
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
+
+        // Additional stability improvements
+        options.addArguments("--window-size=1920,1080");
+        options.addArguments("--disable-extensions");
+        options.addArguments("--disable-plugins");
+
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.get(ConfigReader.getBaseUrl());
         log.info("Browser opened and navigated to: " + ConfigReader.getBaseUrl());
